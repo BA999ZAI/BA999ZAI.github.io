@@ -52,11 +52,9 @@
             margin-left: 30px;
             font-size: 1.2rem;
             font-weight: 600;
-            display: flex;
         }
 
         nav .github a {
-            margin-left: 3px;
             color: white;
             text-decoration: none;
             transition: opacity var(--transition-duration);
