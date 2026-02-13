@@ -1,0 +1,374 @@
+        :root {
+            --primary-color: #6D28D9;
+            --secondary-color: #64748b;
+            --background-color: #ffffff;
+            --text-color: #1f2937;
+            --accent-color: #A78BFA;
+            --card-bg: #f9fafb;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --font-family: 'Poppins', sans-serif;
+            --transition-duration: 0.3s;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            --primary-color: #6D28D9;
+            --secondary-color: #94a3b8;
+            --background-color: #1f2937;
+            --text-color: #f3f4f6;
+            --accent-color: #A78BFA;
+            --card-bg: #374151;
+        }
+
+        /* Nav Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0rem;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: background var(--transition-duration);
+        }
+
+        nav .github {
+            margin-left: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        nav .github a {
+            color: white;
+            text-decoration: none;
+            transition: opacity var(--transition-duration);
+        }
+
+        nav .github a:hover {
+            opacity: 0.8;
+        }
+
+        nav .menu {
+            display: flex;
+            margin-right: 30px;
+            gap: 1.5rem;
+        }
+
+        nav .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: opacity var(--transition-duration), transform var(--transition-duration);
+        }
+
+        nav .menu a:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            margin-top: 60px;
+        }
+
+        header.fade-out {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        header::before {
+            pointer-events: none;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+            animation: pulse 5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin: 0.5rem 0;
+            font-weight: 300;
+        }
+
+        .contacts {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contacts a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform var(--transition-duration), opacity var(--transition-duration);
+        }
+
+        .contacts a:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            cursor: default;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.7rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            transition: color var(--transition-duration);
+        }
+
+        /* Experience Cards */
+        .experience-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+            cursor: pointer;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-card summary {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 0 0 0.5rem;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color var(--transition-duration);
+        }
+
+        .experience-card summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform var(--transition-duration);
+        }
+
+        .experience-card[open] summary::after {
+            content: '-';
+            transform: rotate(180deg);
+        }
+
+        .experience-card .period {
+            font-style: italic;
+            color: var(--secondary-color);
+            font-weight: 400;
+        }
+
+        .projects {
+            margin-top: 1.5rem;
+        }
+
+        .project {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-left: 4px solid var(--accent-color);
+            transition: border-color var(--transition-duration);
+        }
+
+        .project h4 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            transition: color var(--transition-duration);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill {
+            cursor: default;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 9999px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: transform var(--transition-duration), opacity var(--transition-duration);
+            touch-action: manipulation;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        /* Education */
+        .education-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: background var(--transition-duration), box-shadow var(--transition-duration);
+        }
+
+        /* About */
+        #about p {
+            font-size: 1.15rem;
+            font-weight: 300;
+        }
+
+        #about ol {
+            padding-left: 1.5rem;
+            list-style-type: decimal;
+        }
+
+        #about ol li {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .contacts {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav .menu {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 4rem 1rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Toggle Button */
+        .toggle-dark {
+            position: fixed;
+            top: 70px;
+            right: 1.5rem;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            z-index: 999;
+            font-weight: 500;
+            transition: background var(--transition-duration), transform var(--transition-duration);
+        }
+
+        .toggle-dark:hover {
+            background: var(--primary-color);
+            transform: scale(1.05);
+        }

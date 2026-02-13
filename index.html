@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Борисенко Иван Федорович</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="github">
+            <a href="https://github.com/BA999ZAI">BA999ZAI</a>
+        </div>
+        <div class="menu">
+            <a href="#desired-position">Желаемая должность</a>
+            <a href="#experience">Опыт</a>
+            <a href="#education">Образование</a>
+            <a href="#skills">Навыки</a>
+            <a href="#about">Обо мне</a>
+        </div>
+    </nav>
+
+    <button id="toggle-dark" class="toggle-dark" onclick="toggleDarkMode()">Тёмный режим</button>
+
+    <header id="header">
+        <h1>Борисенко Иван Федорович</h1>
+        <p>Мужчина, 22 года, родился 3 августа 2003</p>
+        <p>Проживает: Краснодар | Гражданство: Россия</p>
+        <p>Готов к переезду, готов к командировкам</p>
+        <div class="contacts">
+            <a onclick="copyText(event, '+79182405006')">+7 (918) 2405006</a>
+            <a onclick="copyText(event, 'vano2003borisenko@gmail.com')">vano2003borisenko@gmail.com</a>
+            <a href="https://t.me/BA9ZAI">@BA9ZAI</a>
+        </div>
+    </header>
+
+    <section id="desired-position">
+        <h2>Желаемая должность</h2>
+    </section>
+
+    <section id="experience">
+        <h2>Опыт работы — 3 года</h2>
+        <div id="experience-container"></div>
+    </section>
+
+    <section id="education">
+        <h2>Образование</h2>
+        <div id="education-container"></div>
+    </section>
+
+    <section id="skills">
+        <h2>Навыки</h2>
+        <div class="skills-list" id="skills-container"></div>
+        <h3>Знание языков</h3>
+        <div id="languages-container"></div>
+    </section>
+
+    <section id="additional">
+        <h2>Дополнительная информация</h2>
+        <div id="additional-container"></div>
+    </section>
+
+    <section id="about">
+        <h2>Обо мне</h2>
+        <div id="about-container"></div>
+    </section>
+</body>
+</html>
