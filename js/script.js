@@ -10,7 +10,7 @@
                 {
                     company: 'IT HUB, Самарканд',
                     period: 'Сентябрь 2024 — Февраль 2026 (1 год 6 месяцев)',
-                    role: 'Golang-разработчик',
+                    role: 'Разработчик Node.js',
                     projects: [
                         {
                             name: 'I) OTC',
@@ -58,7 +58,7 @@
                 {
                     company: 'SHEVEREV, Ростов-на-Дону',
                     period: 'Ноябрь 2023 — Сентябрь 2024 (11 месяцев)',
-                    role: 'Golang-разработчик',
+                    role: 'Разработчик Node.js',
                     projects: [
                         {
                             name: 'I) "Умная бутылка"',
